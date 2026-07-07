@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Elite  Motors Angola</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Elite<span>MOTORS</span></h1>
+            <nav class="nav">
+                <a href="index.html">Início</a>
+                <a href="sobre.html">Sobre Nós</a>
+                <a href="faq.html">FAQ</a>
+                <a href="404.html">404</a>
+                <a href="contactos.html" class="btn-contato">Contactar</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-sub">
+        <div class="container">
+            <h1>Perguntas <span>Frequentes</span></h1>
+            <p>Esclareça as suas dúvidas sobre a aquisição do seu próximo veículo.</p>
+        </div>
+    </section>
+
+    <main class="container content-page">
+        <div class="faq-container">
+            
+            <div class="faq-item">
+                <button class="faq-question">A Elite  Motors aceita pagamento em Kwanzas? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>Sim, aceitamos pagamentos em Kwanzas (Kz) através de transferência bancária. O valor é calculado com base na taxa de câmbio do dia acordada no momento da faturação.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Os veículos já incluem matrícula de Angola? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>Todos os veículos em stock no nosso showroom de Luanda já possuem matrícula angolana e toda a documentação regularizada (Livrete e Título de Propriedade).</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">É possível encomendar um carro que não esteja no stock? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>Com certeza. Temos um serviço de importação personalizada onde buscamos o modelo, cor e extras específicos que deseja nos mercados da Europa, Dubai ou EUA.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Aceitam carros como retoma (troca)? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>Aceitamos retomas após uma avaliação rigorosa da nossa equipa técnica. O veículo deve estar em excelente estado de conservação e com documentação em dia.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Qual é o prazo de entrega para encomendas? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>Para veículos importados por encomenda, o prazo médio de entrega em Luanda é de 30 a 45 dias, dependendo da origem do veículo.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer-premium">
+    <div class="footer-container">
+        
+        <!-- Coluna 1: Logo e Slogan -->
+        <div class="footer-column footer-brand">
+            <h2 class="logo">Elite<span>MOTORS</span></h2>
+            <p class="footer-slogan">Excelência técnica e comercial para o segmento automóvel premium em Angola.</p>
+        </div>
+        
+        <!-- Coluna 2: Links Rápidos -->
+        <div class="footer-column">
+            <h3>Links rápidos</h3>
+            <ul class="footer-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#estoque">Estoque</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="404.html">404</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
+            </ul>
+        </div>
+        
+        <!-- Coluna 3: Contactos Oficiais -->
+        <div class="footer-column">
+            <h3>Contacto</h3>
+            <ul class="footer-info">
+                <li><i class="fas fa-map-marker-alt"></i> Luanda, Angola</li>
+                <li><i class="fas fa-phone-alt"></i> +244 958 220 358</li>
+                <li><i class="fas fa-envelope"></i> info@elitemotors.ao</li>
+            </ul>
+        </div>
+        
+        <!-- Coluna 4: Redes Sociais -->
+        <div class="footer-column">
+            <h3>Redes sociais</h3>
+            <ul class="footer-socials">
+                <li><a href="https://wa.me/244958220358" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                <li><a href="https://facebook.com" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                <li><a href="https://instagram.com" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a></li>
+                <li><a href="mailto:info@elitemotors.ao"><i class="far fa-envelope"></i> Email</a></li>
+            </ul>
+        </div>
+        
+    </div>
+
+    <!-- Linha de Direitos Autorais inferior -->
+    <div class="footer-bottom">
+        <p>&copy; 2026 Elite Motors Angola | Todos os direitos reservados</p>
+         <div>
+            <a href="politica.html">Politica de Privacidade</a>
+            <a href="termos.html">Termos e Condições</a>
+        </div>
+    </div>
+</footer>
+        <script>
+          document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+        </script>
+
+</body>
+</html>

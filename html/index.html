@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Motors | Showroom Premium Luanda</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <h1 class="logo">Elite<span>MOTORS</span></h1>
+            <nav class="nav">
+                <a href="index.html">Início</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="servicos.html">Serviços</a>
+                <a href="faq.html">faq</a>
+                <a href="blog.html">blog</a>
+                <a href="galeria.html">Galeria</a>
+                <a href="404.html">404</a>
+                <a href="contactos.html" class="btn-contato">Contactar</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-main">
+        <div class="container">
+            <div class="hero-content">
+                <h1>CONDUZA O <span>EXCLUSIVO</span></h1>
+                <p>A maior curadoria de veículos premium e performance em Angola.</p>
+                <a href="#estoque" class="btn-primary">Explorar Stock</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="container" id="estoque">
+        <div class="section-header">
+            <h2>Showroom Digital</h2>
+            <p>Viaturas exclusivas disponíveis para entrega imediata em toda Luanda.</p>
+        </div>
+
+        <div class="filter-tabs">
+            <a href="#" class="filter-btn active">Todos</a>
+            <a href="#" class="filter-btn">SUV</a>
+            <a href="#" class="filter-btn">Esportivo</a>
+            <a href="#" class="filter-btn">Picape</a>
+            <a href="#" class="filter-btn">Luxo</a>
+            <a href="#" class="filter-btn promo-btn"><i class="fas fa-tag"></i> Promoção</a>
+        </div>
+
+        <div class="grid-car">
+            
+            <div class="card suv luxo" data-category="suv">
+                <div class="card-img">
+                    <img src="../img/g63.jpg" alt="Mercedes G63">
+                    <span class="badge-tipo">SUV</span>
+                </div>
+                <div class="card-info">
+                    <span class="marca-tag">MERCEDES-BENZ</span>
+                    <h3>G63 AMG V8 BiTurbo</h3>
+                    <div class="specs-pills">2024</div>
+                    <p class="preco-tag">261.850.000 Kz</p>
+                    <div class="card-buttons">
+                        <button class="btn-details" onclick="openModal('g63')">Detalhes</button>
+                        <a href="https://wa.me/244958220358" class="btn-card">Negociar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card esportivo promo-card" data-category="esportivo">
+                <div class="card-img">
+                    <img src="../img/911.jpg" alt="Porsche 911">
+                    <span class="badge-tipo">Esportivo</span>
+                </div>
+                <div class="card-info">
+                    <span class="marca-tag">PORSCHE</span>
+                    <h3>911 Carrera S</h3>
+                    <div class="specs-pills">2023</div>
+                    <p class="preco-antigo">135.000.000 Kz</p>
+                    <p class="preco-tag">120.000.000 Kz</p>
+                    <div class="card-buttons">
+                        <button class="btn-details" onclick="openModal('p911')">Detalhes</button>
+                        <a href="https://wa.me/244958220358" class="btn-card">Negociar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card suv" data-category="suv">
+                <div class="card-img">
+                    <img src="../img/lc.jpeg" alt="Toyota LC 300">
+                    <span class="badge-tipo">SUV</span>
+                </div>
+                <div class="card-info">
+                    <span class="marca-tag">TOYOTA</span>
+                    <h3>Land Cruiser 300 VXR</h3>
+                    <div class="specs-pills">2025</div>
+                    <p class="preco-tag">120.500.000 Kz</p>
+                    <div class="card-buttons">
+                        <button class="btn-details" onclick="openModal('lc300')">Detalhes</button>
+                        <a href="https://wa.me/244958220358" class="btn-card">Negociar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card esportivo luxo" data-category="esportivo">
+                <div class="card-img">
+                    <img src="../img/720s.jpg" alt="McLaren 720s">
+                    <span class="badge-tipo">Esportivo</span>
+                </div>
+                <div class="card-info">
+                    <span class="marca-tag">MCLAREN</span>
+                    <h3>720s Spider</h3>
+                    <div class="specs-pills">2025</div>
+                    <p class="preco-tag">170.500.000 Kz</p>
+                    <div class="card-buttons">
+                        <button class="btn-details" onclick="openModal('mclaren')">Detalhes</button>
+                        <a href="https://wa.me/244958220358" class="btn-card">Negociar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card picape" data-category="picape">
+                <div class="card-img">
+                    <img src="../img/hilux.jpg" alt="Hilux GR-Sport">
+                    <span class="badge-tipo">Picape</span>
+                </div>
+                <div class="card-info">
+                    <span class="marca-tag">TOYOTA</span>
+                    <h3>Hilux GR-Sport IV</h3>
+                    <div class="specs-pills">2025</div>
+                    <p class="preco-tag">38.000.000 Kz</p>
+                    <div class="card-buttons">
+                        <button class="btn-details" onclick="openModal('hilux')">Detalhes</button>
+                        <a href="https://wa.me/244958220358" class="btn-card">Negociar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card suv luxo" data-category="luxo">
+                <div class="card-img">
+                    <img src="../img/vogue.jpeg" alt="Range Rover Vogue">
+                    <span class="badge-tipo">Luxo</span>
+                </div>
+                <div class="card-info">
+                    <span class="marca-tag">LAND ROVER</span>
+                    <h3>Range Rover Vogue P530</h3>
+                    <div class="specs-pills">2025</div>
+                    <p class="preco-tag">200.000.000 Kz</p>
+                    <div class="card-buttons">
+                        <button class="btn-details" onclick="openModal('vogue')">Detalhes</button>
+                        <a href="https://wa.me/244958220358" class="btn-card">Negociar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card suv luxo" data-category="suv">
+                <div class="card-img">
+                    <img src="../img/x7.jpg" alt="BMW X7">
+                    <span class="badge-tipo">SUV</span>
+                </div>
+                <div class="card-info">
+                    <span class="marca-tag">BMW</span>
+                    <h3>X7 M60i</h3>
+                    <div class="specs-pills">2024</div>
+                    <p class="preco-tag">145.000.000 Kz</p>
+                    <div class="card-buttons">
+                        <button class="btn-details" onclick="openModal('bmwx7')">Detalhes</button>
+                        <a href="https://wa.me/244958220358" class="btn-card">Negociar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card esportivo luxo" data-category="esportivo">
+                <div class="card-img">
+                    <img src="../img/rs6.jpg" alt="Audi RS6">
+                    <span class="badge-tipo">Esportivo</span>
+                </div>
+                <div class="card-info">
+                    <span class="marca-tag">AUDI</span>
+                    <h3>RS6 Avant</h3>
+                    <div class="specs-pills">2025</div>
+                    <p class="preco-tag">158.000.000 Kz</p>
+                    <div class="card-buttons">
+                        <button class="btn-details" onclick="openModal('audirs6')">Detalhes</button>
+                        <a href="https://wa.me/244958220358" class="btn-card">Negociar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card suv luxo" data-category="luxo">
+                <div class="card-img">
+                    <img src="../img/escalade.jpg" alt="Cadillac Escalade">
+                    <span class="badge-tipo">Luxo</span>
+                </div>
+                <div class="card-info">
+                    <span class="marca-tag">CADILLAC</span>
+                    <h3>Escalade ESV V-Series</h3>
+                    <div class="specs-pills">2025</div>
+                    <p class="preco-tag">210.000.000 Kz</p>
+                    <div class="card-buttons">
+                        <button class="btn-details" onclick="openModal('escalade')">Detalhes</button>
+                        <a href="https://wa.me/244958220358" class="btn-card">Negociar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card suv luxo" data-category="suv">
+                <div class="card-img">
+                    <img src="../img/lx600.jpg" alt="Lexus LX 600">
+                    <span class="badge-tipo">SUV</span>
+                </div>
+                <div class="card-info">
+                    <span class="marca-tag">LEXUS</span>
+                    <h3>LX 600 Ultra</h3>
+                    <div class="specs-pills">2025</div>
+                    <p class="preco-tag">265.000.000 Kz</p>
+                    <div class="card-buttons">
+                        <button class="btn-details" onclick="openModal('lx600')">Detalhes</button>
+                        <a href="https://wa.me/244958220358" class="btn-card">Negociar</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <section class="home-marketing-section">
+        <div class="container">
+            <h2 >Excelência Operacional</h2>
+            <p>Porquê escolher o Ecossistema Elite Motors?</p>
+            <div class="marketing-grid">
+                <div class="marketing-card">
+                    <h3>Garantia Premium</h3>
+                    <p>Suporte completo pós-venda mecânico e elétrico em oficinas certificadas na província de Luanda.</p>
+                </div>
+                <div class="marketing-card">
+                    <h3>Importações sob Medida</h3>
+                    <p>Configuração exclusiva de modelos europeus ou americanos trazidos via frete marítimo seguro direto.</p>
+                </div>
+                <div class="marketing-card">
+                    <h3>Crédito Prévio Bancário</h3>
+                    <p>Assessoria com os principais analistas de crédito automóvel do país para aprovação agilizada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="carModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-grid">
+                
+                <div class="modal-gallery">
+                    <img id="mainModalImg" src="" alt="Destaque">
+                    <div class="thumb-container" id="thumbContainer"></div>
+                </div>
+                
+                <div class="modal-info-side">
+                    <h2 id="modalTitle">Nome do Carro</h2>
+                    <p class="modal-price" id="modalPrice">0 Kz</p>
+                    
+                    <div class="specs-grid">
+                        <div class="spec-box"><strong>Ano:</strong> <span id="specAno"></span></div>
+                        <div class="spec-box"><strong>Cor:</strong> <span id="specCor"></span></div>
+                        <div class="spec-box"><strong>Transmissão:</strong> <span id="specTrans"></span></div>
+                        <div class="spec-box"><strong>Combustível:</strong> <span id="specFuel"></span></div>
+                        <div class="spec-box"><strong>Quilometragem:</strong> <span id="specKm"></span></div>
+                    </div>
+
+                    <div class="finance-simulator">
+                        <h3>Simular Crédito Automóvel</h3>
+                        <div class="sim-field">
+                            <label for="financeDownpayment">Entrada Inicial (Kz):</label>
+                            <input type="number" id="financeDownpayment" value="0" oninput="calculateFinance()">
+                        </div>
+                        <div class="sim-field">
+                            <label for="financeMonths">Prazo de Pagamento:</label>
+                            <select id="financeMonths" name="financeMonths" onchange="calculateFinance()">
+                                <option value="12">12 Meses</option>
+                                <option value="24">24 Meses</option>
+                                <option value="36" selected>36 Meses</option>
+                                <option value="48">48 Meses</option>
+                                <option value="60">60 Meses</option>
+                            </select>
+                        </div>
+                        <div class="sim-result">
+                            <p>Prestação Estimada:</p>
+                            <span id="monthlyInstallment">0 Kz / mês</span>
+                            <small id="simError"></small>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/244958220358" class="btn-primary">Reservar Agora</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <footer class="footer-premium">
+    <div class="footer-container">
+        
+        <!-- Coluna 1: Logo e Slogan -->
+        <div class="footer-column footer-brand">
+            <h2 class="logo">Elite<span>MOTORS</span></h2>
+            <p class="footer-slogan">Excelência técnica e comercial para o segmento automóvel premium em Angola.</p>
+        </div>
+        
+        <!-- Coluna 2: Links Rápidos -->
+        <div class="footer-column">
+            <h3>As nossas paginas</h3>
+            <ul class="footer-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#estoque">Estoque</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="404.html">404</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
+            </ul>
+        </div>
+        
+        <!-- Coluna 3: Contactos Oficiais -->
+        <div class="footer-column">
+            <h3>Contacto</h3>
+            <ul class="footer-info">
+                <li><i class="fas fa-map-marker-alt"></i> Luanda, Angola</li>
+                <li><i class="fas fa-phone-alt"></i> +244 958 220 358</li>
+                <li><i class="fas fa-envelope"></i> info@elitemotors.ao</li>
+            </ul>
+        </div>
+        
+        <!-- Coluna 4: Redes Sociais -->
+        <div class="footer-column">
+        <h3>Redes sociais</h3>
+        <ul class="footer-socials">
+        <li><a href="https://wa.me/244958220358" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+        <li><a href="https://facebook.com" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+        <li><a href="https://instagram.com" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a></li>
+        <li><a href="mailto:info@elitemotors.ao"><i class="far fa-envelope"></i> Email</a></li>
+     </ul>
+    </div>
+    
+    </div>
+
+    <!-- Linha de Direitos Autorais inferior -->
+    <div class="footer-bottom">
+        <p>&copy; 2026 Elite Motors Angola | Todos os direitos reservados</p>
+        <div>
+            <a href="politica.html">Politica de Privacidade</a>
+            <a href="termos.html">Termos e Condições</a>
+        </div>
+    </div>
+</footer>
+
+    <a href="https://wa.me/244958220358" class="whatsapp-fixed">
+        <i class="fab fa-whatsapp"></i>
+        <span>Fale com o Consultor</span>
+    </a>
+    <script src="../js/script.js"></script>
+</body>
+</html>
