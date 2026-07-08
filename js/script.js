@@ -305,22 +305,18 @@ document.addEventListener("DOMContentLoaded", function() {
             contactForm.reset();
         });
     }
-     
-// ========================================================
+    // ========================================================
     // 4. FUNCIONALIDADE ALTERNAR TEMA (DARK / LIGHT MODE)
     // ========================================================
     const themeToggleBtn = document.getElementById("themeToggleBtn");
     
     if (themeToggleBtn) {
         const themeIcon = themeToggleBtn.querySelector("i");
-
-    
         const savedTheme = localStorage.getItem("theme") || "dark";
         
-    
         document.documentElement.setAttribute("data-theme", savedTheme);
         updateIcon(savedTheme);
-        
+
         themeToggleBtn.addEventListener("click", function() {
             const currentTheme = document.documentElement.getAttribute("data-theme");
             const newTheme = currentTheme === "dark" ? "light" : "dark";
@@ -333,12 +329,13 @@ document.addEventListener("DOMContentLoaded", function() {
         function updateIcon(theme) {
             if (themeIcon) {
                 if (theme === "light") {
-                    themeIcon.className = "fas fa-sun"; 
+                    themeIcon.className = "fas fa-sun";
                 } else {
-                    themeIcon.className = "fas fa-moon"; 
+                    themeIcon.className = "fas fa-moon";
                 }
             }
         }
     }
 });
+     
 
