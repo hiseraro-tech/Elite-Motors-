@@ -1518,3 +1518,28 @@ body {
 .btn-theme-toggle:hover {
     transform: scale(1.15);
 }
+
+/* ========================================================
+   ADAPTAÇÃO DA PÁGINA SOBRE PARA MODO CLARO (LIGHT MODE)
+   ======================================================== */
+
+/* 1. Garante que o fundo do body muda para a cor clara da variável */
+[data-theme="light"] body {
+    background-color: var(--bg-primary) !important;
+    color: var(--text-main) !important;
+}
+
+/* 2. Muda a cor do texto do parágrafo para ficar escuro e legível */
+[data-theme="light"] .about-column-text p {
+    color: #333333 !important; /* Um cinza escuro elegante que combina com o premium */
+}
+
+/* 3. Ajusta o título principal se necessário (caso queiras que mude de cor) */
+[data-theme="light"] .about-column-text h2 {
+    color: #0a0a0a !important;
+}
+
+/* 4. Ajusta a borda da imagem do showroom para não contrastar tanto no fundo claro */
+[data-theme="light"] .about-showroom-img {
+    border: 1px solid var(--border-color);
+}
