@@ -305,7 +305,7 @@ document.addEventListener("DOMContentLoaded", function() {
             contactForm.reset();
         });
     }
-     });
+     
 // ========================================================
     // 4. FUNCIONALIDADE ALTERNAR TEMA (DARK / LIGHT MODE)
     // ========================================================
