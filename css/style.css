@@ -8,6 +8,18 @@
     --white: #ffffff;
     --promo-red: #ff4d4d;
     --transition: 0.3s ease;
+    --border-color: #1a1a1a;
+    --text-muted: #b3b3b3;
+    --bg-surface: #0e0e0e;
+}
+
+   [data-theme="light"] {
+    --dark-bg: #f4f4f4;      
+    --white: #141414;         
+    --card-bg: #ffffff;      
+    --bg-surface: #eaeaea;    
+    --border-color: #d1d1d1;  
+    --text-muted: #555555;   
 }
 
 * { 
