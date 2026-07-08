@@ -1,4 +1,6 @@
+// ========================================================
 // BANCO DE DADOS COMPLETO COM TODAS AS FOTOS E DETALHES PRESERVADOS
+// ========================================================
 const carData = {
     'g63': {
         title: 'Mercedes-Benz G63 AMG',
@@ -126,34 +128,47 @@ const modal = document.getElementById("carModal");
 
 function openModal(id) {
     const car = carData[id];
-    if (!car) return;
+    if (!car || !modal) return;
 
-    currentCarPrice = car.priceRaw;
+    currentCarPrice = car.priceRaw || 0;
 
-    // Vinculação com o DOM do Modal
-    document.getElementById("modalTitle").innerText = car.title;
-    document.getElementById("modalPrice").innerText = car.price;
-    document.getElementById("specAno").innerText = car.ano;
-    document.getElementById("specCor").innerText = car.cor;
-    document.getElementById("specTrans").innerText = car.trans;
-    document.getElementById("specFuel").innerText = car.fuel;
-    document.getElementById("specKm").innerText = car.km;
+    // Vinculação segura com o DOM do Modal
+    const modalTitle = document.getElementById("modalTitle");
+    const modalPrice = document.getElementById("modalPrice");
+    const specAno = document.getElementById("specAno");
+    const specCor = document.getElementById("specCor");
+    const specTrans = document.getElementById("specTrans");
+    const specFuel = document.getElementById("specFuel");
+    const specKm = document.getElementById("specKm");
+    const financeDownpayment = document.getElementById("financeDownpayment");
+    const financeMonths = document.getElementById("financeMonths");
 
-    // Reseta o formulário interno
-    document.getElementById("financeDownpayment").value = 0;
-    document.getElementById("financeMonths").value = "36";
+    if (modalTitle) modalTitle.innerText = car.title;
+    if (modalPrice) modalPrice.innerText = car.price;
+    if (specAno) specAno.innerText = car.ano;
+    if (specCor) specCor.innerText = car.cor;
+    if (specTrans) specTrans.innerText = car.trans;
+    if (specFuel) specFuel.innerText = car.fuel;
+    if (specKm) specKm.innerText = car.km;
+
+    if (financeDownpayment) financeDownpayment.value = 0;
+    if (financeMonths) financeMonths.value = "36";
 
     const mainImg = document.getElementById("mainModalImg");
-    mainImg.src = car.images[0];
+    if (mainImg && car.images && car.images[0]) {
+        mainImg.src = car.images[0];
+    }
 
     const thumbContainer = document.getElementById("thumbContainer");
-    thumbContainer.innerHTML = "";
-    car.images.forEach((imgSrc) => {
-        const thumb = document.createElement("img");
-        thumb.src = imgSrc;
-        thumb.onclick = () => { mainImg.src = imgSrc; };
-        thumbContainer.appendChild(thumb);
-    });
+    if (thumbContainer && car.images) {
+        thumbContainer.innerHTML = "";
+        car.images.forEach((imgSrc) => {
+            const thumb = document.createElement("img");
+            thumb.src = imgSrc;
+            thumb.onclick = () => { if (mainImg) mainImg.src = imgSrc; };
+            thumbContainer.appendChild(thumb);
+        });
+    }
 
     calculateFinance();
 
@@ -167,13 +182,15 @@ function calculateFinance() {
     const resultSpan = document.getElementById("monthlyInstallment");
     const errorSmall = document.getElementById("simError");
 
+    if (!downpaymentInput || !monthsSelect || !resultSpan) return;
+
     let downpayment = parseFloat(downpaymentInput.value) || 0;
     let months = parseInt(monthsSelect.value) || 36;
 
-    if(errorSmall) errorSmall.style.display = "none";
+    if (errorSmall) errorSmall.style.display = "none";
 
     if (downpayment >= currentCarPrice) {
-        if(errorSmall) {
+        if (errorSmall) {
             errorSmall.innerText = "A entrada não pode ser maior ou igual ao preço.";
             errorSmall.style.display = "block";
         }
@@ -196,40 +213,55 @@ function calculateFinance() {
     resultSpan.innerText = `${formattedInstallment} Kz / mês`;
 }
 
-document.querySelector(".close-modal").onclick = closeModal;
-function closeModal() {
-    modal.style.display = "none";
-    document.body.style.overflow = "auto";
+// Fecho seguro do modal
+const closeModalBtn = document.querySelector(".close-modal");
+if (closeModalBtn) {
+    closeModalBtn.onclick = closeModal;
 }
 
-window.onclick = (e) => { if (e.target == modal) closeModal(); };
+function closeModal() {
+    if (modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+    }
+}
 
-document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.onclick = (e) => {
-        e.preventDefault();
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.innerText.toLowerCase();
-        document.querySelectorAll('.card').forEach(card => {
-            const category = card.getAttribute('data-category').toLowerCase();
-            if (filter === 'todos') {
-                card.style.display = 'block';
-            } else if (category === filter || (filter.includes('promoção') && card.classList.contains('promo-card'))) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    };
-});
+window.onclick = (e) => { 
+    if (modal && e.target == modal) closeModal(); 
+};
 
+// Ativação segura dos Filtros 
+const filterButtons = document.querySelectorAll('.filter-btn');
+if (filterButtons.length > 0) {
+    filterButtons.forEach(btn => {
+        btn.onclick = (e) => {
+            e.preventDefault();
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.innerText.toLowerCase();
+            document.querySelectorAll('.card').forEach(card => {
+                const category = card.getAttribute('data-category') ? card.getAttribute('data-category').toLowerCase() : '';
+                if (filter === 'todos') {
+                    card.style.display = 'block';
+                } else if (category === filter || (filter.includes('promoção') && card.classList.contains('promo-card'))) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        };
+    });
+}
+
+// ========================================================
+// PROCESSAMENTO COMPLETO APÓS CARREGAMENTO DO DOM
+// ========================================================
 document.addEventListener("DOMContentLoaded", function() {
     
     // ========================================================
     // 1. MENU DE NAVEGAÇÃO RESPONSIVO
     // ========================================================
     const nav = document.querySelector(".nav");
-    // Cria o botão hambúrguer dinamicamente se ele não existir no HTML
     if (nav && !document.querySelector(".menu-toggle")) {
         const toggleBtn = document.createElement("button");
         toggleBtn.className = "menu-toggle";
@@ -270,14 +302,20 @@ document.addEventListener("DOMContentLoaded", function() {
     const contactForm = document.querySelector(".premium-form");
     if (contactForm) {
         contactForm.addEventListener("submit", function(event) {
-            event.preventDefault(); // Impede o envio nativo para podermos validar
+            event.preventDefault();
             
-            const nome = document.getElementById("nome-completo").value.trim();
-            const email = document.getElementById("seu-email").value.trim();
-            const assunto = document.getElementById("assunto-contacto").value;
-            const mensagem = document.getElementById("mensagem-contacto").value.trim();
+            const nomeInput = document.getElementById("nome-completo");
+            const emailInput = document.getElementById("seu-email");
+            const assuntoInput = document.getElementById("assunto-contacto");
+            const mensagemInput = document.getElementById("mensagem-contacto");
+
+            if (!nomeInput || !emailInput || !assuntoInput || !mensagemInput) return;
+
+            const nome = nomeInput.value.trim();
+            const email = emailInput.value.trim();
+            const assunto = assuntoInput.value;
+            const mensagem = mensagemInput.value.trim();
             
-            // Regex simples para validação de e-mail
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
             if (nome.length < 3) {
@@ -300,11 +338,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 return;
             }
 
-            // Se passar todas as validações
             alert("Obrigado, " + nome + "! A sua mensagem foi enviada com sucesso à Elite Motors.");
             contactForm.reset();
         });
     }
+
     // ========================================================
     // 4. FUNCIONALIDADE ALTERNAR TEMA (DARK / LIGHT MODE)
     // ========================================================
@@ -337,5 +375,3 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
-     
-
