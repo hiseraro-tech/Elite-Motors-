@@ -13,7 +13,7 @@
     --bg-surface: #0e0e0e;
 }
 
-   [data-theme="light"] {
+[data-theme="light"] {
     --dark-bg: #f4f4f4;      
     --white: #141414;         
     --card-bg: #ffffff;      
@@ -500,7 +500,7 @@ body {
 }
 
 /* =========================================
-   7.    SECÇÕES DE MARKETING
+   7.     SECÇÕES DE MARKETING
    ========================================= */
 .home-marketing-section { 
     padding: 60px 0; 
@@ -1370,68 +1370,69 @@ body {
 .faq-item.active .faq-question i {
     transform: rotate(180deg);
 }
+
 /* ==========================================================================
-   SISTEMA COMPLETO DE ADAPTAÇÃO PARA MODO CLARO (LIGHT MODE)
+   SISTEMA COMPLETO DE ADAPTAÇÃO PARA MODO CLARO (LIGHT MODE) - CORRIGIDO
    ========================================================================== */
 
 /* 1. Elementos Estruturais e Fundos Principais */
 [data-theme="light"] body {
-    background-color: var(--bg-primary) !important;
-    color: var(--text-main) !important;
+    background-color: var(--dark-bg) !important;
+    color: var(--white) !important;
 }
 
 [data-theme="light"] .header, 
 [data-theme="light"] .hero-sub,
-[data-theme="light"] .home-marketing-section {
+[data-theme="light"] .home-marketing-section,
+[data-theme="light"] .content-page {
     background-color: var(--bg-surface) !important;
     border-bottom: 1px solid var(--border-color);
 }
 
 /* 2. Menu de Navegação e Links */
 [data-theme="light"] .nav a {
-    color: var(--text-main);
+    color: var(--white) !important;
 }
 [data-theme="light"] .nav a:hover {
-    color: var(--gold);
+    color: var(--gold) !important;
 }
 
 /* 3. Showroom: Adaptação dos Cards de Carros */
 [data-theme="light"] .card {
-    background-color: var(--bg-surface) !important;
+    background-color: var(--card-bg) !important;
     border: 1px solid var(--border-color) !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 [data-theme="light"] .card-info {
-    background-color: var(--bg-surface) !important;
+    background-color: var(--card-bg) !important;
 }
 
 [data-theme="light"] .card-info h3 {
-    color: var(--text-main) !important;
+    color: var(--white) !important;
 }
 
 [data-theme="light"] .preco-tag {
-    color: var(--text-main) !important;
+    color: var(--gold) !important;
 }
 
 [data-theme="light"] .specs-pills {
-    background-color: var(--bg-card) !important;
     color: var(--text-muted) !important;
 }
 
 /* 4. Página de FAQ (Acordião) */
 [data-theme="light"] .faq-item {
-    background-color: var(--bg-surface) !important;
+    background-color: var(--card-bg) !important;
     border-color: var(--border-color) !important;
 }
 
 [data-theme="light"] .faq-question {
     background-color: var(--bg-surface) !important;
-    color: var(--text-main) !important;
+    color: var(--white) !important;
 }
 
 [data-theme="light"] .faq-answer {
-    background-color: var(--bg-primary) !important;
+    background-color: var(--card-bg) !important;
 }
 
 [data-theme="light"] .faq-answer p {
@@ -1440,66 +1441,91 @@ body {
 
 /* 5. Janela Modal de Detalhes e Simulador */
 [data-theme="light"] .modal-content {
-    background-color: var(--bg-surface) !important;
-    color: var(--text-main) !important;
+    background-color: var(--card-bg) !important;
+    color: var(--white) !important;
+    border-color: var(--border-color) !important;
 }
 
 [data-theme="light"] #modalTitle {
-    color: var(--text-main) !important;
+    color: var(--white) !important;
+}
+
+[data-theme="light"] .specs-grid {
+    background-color: var(--bg-surface) !important;
 }
 
 [data-theme="light"] .spec-box {
-    background-color: var(--bg-primary) !important;
-    border: 1px solid var(--border-color) !important;
-    color: var(--text-main) !important;
+    color: var(--white) !important;
 }
 
 [data-theme="light"] .finance-simulator {
-    background-color: var(--bg-primary) !important;
+    background-color: var(--bg-surface) !important;
     border: 1px solid var(--border-color) !important;
 }
 
 [data-theme="light"] .finance-simulator h3,
 [data-theme="light"] .sim-field label {
-    color: var(--text-main) !important;
+    color: var(--white) !important;
 }
 
 [data-theme="light"] .sim-field input,
 [data-theme="light"] .sim-field select {
-    background-color: var(--bg-surface) !important;
+    background-color: var(--card-bg) !important;
     border: 1px solid var(--border-color) !important;
-    color: var(--text-main) !important;
+    color: var(--white) !important;
+}
+
+[data-theme="light"] .sim-result {
+    background-color: var(--bg-surface) !important;
 }
 
 /* 6. Secção de Marketing (Cards de Benefícios) */
 [data-theme="light"] .marketing-card {
-    background-color: var(--bg-surface) !important;
+    background-color: var(--card-bg) !important;
     border: 1px solid var(--border-color) !important;
 }
 
 [data-theme="light"] .marketing-card h3 {
-    color: var(--text-main) !important;
+    color: var(--white) !important;
 }
 
 [data-theme="light"] .marketing-card p {
     color: var(--text-muted) !important;
 }
 
-/* 7. Ajuste do Rodapé (Mantendo o tom Premium) */
+/* 7. Ajuste do Rodapé Premium */
 [data-theme="light"] .footer-premium {
     background-color: var(--bg-surface) !important;
     border-top: 1px solid var(--border-color);
 }
 
-[data-theme="light"] .footer-column h3,
+[data-theme="light"] .footer-column h3 {
+    color: var(--gold) !important;
+}
+
 [data-theme="light"] .footer-column p,
+[data-theme="light"] .footer-slogan,
 [data-theme="light"] .footer-links a,
-[data-theme="light"] .footer-info li {
-    color: var(--text-main) !important;
+[data-theme="light"] .footer-info li,
+[data-theme="light"] .footer-links li {
+    color: var(--white) !important;
+}
+
+/* 8. Adaptação da Página Sobre Nós */
+[data-theme="light"] .about-column-text p {
+    color: var(--text-muted) !important;
+}
+
+[data-theme="light"] .about-column-text h2 {
+    color: var(--white) !important;
+}
+
+[data-theme="light"] .about-showroom-img {
+    border: 1px solid var(--border-color) !important;
 }
 
 /* ==========================================================================
-   ESTILO DO BOTÃO DO MENU (Muda conforme o estado)
+   ESTILO DO BOTÃO DO MENU
    ========================================================================== */
 .btn-theme-toggle {
     background: none;
@@ -1517,29 +1543,4 @@ body {
 
 .btn-theme-toggle:hover {
     transform: scale(1.15);
-}
-
-/* ========================================================
-   ADAPTAÇÃO DA PÁGINA SOBRE PARA MODO CLARO (LIGHT MODE)
-   ======================================================== */
-
-/* 1. Garante que o fundo do body muda para a cor clara da variável */
-[data-theme="light"] body {
-    background-color: var(--bg-primary) !important;
-    color: var(--text-main) !important;
-}
-
-/* 2. Muda a cor do texto do parágrafo para ficar escuro e legível */
-[data-theme="light"] .about-column-text p {
-    color: #333333 !important; /* Um cinza escuro elegante que combina com o premium */
-}
-
-/* 3. Ajusta o título principal se necessário (caso queiras que mude de cor) */
-[data-theme="light"] .about-column-text h2 {
-    color: #0a0a0a !important;
-}
-
-/* 4. Ajusta a borda da imagem do showroom para não contrastar tanto no fundo claro */
-[data-theme="light"] .about-showroom-img {
-    border: 1px solid var(--border-color);
 }
